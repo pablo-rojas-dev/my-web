@@ -2,6 +2,12 @@
     "title": "Certificados",
     "items": [
         {
+            "image": "/certificates/datacamp-github-foundations.png",
+            "certificateUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/track/ecf4cd2799b1799316e409104834255b4211a649?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=soa",
+            "title": "Datacamp - GitHub Foundations",
+            "date": "Marzo 2026"
+        },
+        {
             "image": "/certificates/google-cibersecurity.png",
             "certificateUrl": "https://coursera.org/share/3fd135b7d342947e18bf3ad6de088681",
             "title": "Google Cybersecurity — Google Coursera",
