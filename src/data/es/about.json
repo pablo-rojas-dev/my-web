@@ -2,10 +2,10 @@
   "title": "Sobre mí",
   "availableButton": "Disponible para trabajar",
   "paragraphs": [
-      "<b>Soy</b> estudiante de Licenciatura en Informática y desarrollador web apasionado por crear experiencias digitales que combinan tecnología, creatividad e inteligencia artificial.",
-      "<b>Trabajo principalmente con</b> React, Spring Boot, PostgreSQL, Astro y TailwindCSS, desarrollando aplicaciones web y explorando arquitecturas modernas de frontend y backend. Me interesa especialmente la intersección entre el desarrollo de software, la IA generativa y la creatividad.",
-      "<b>Actualmente</b>, estoy enfocado en seguir mejorando mis habilidades a través de proyectos personales, investigación y colaboración multidisciplinaria mientras finalizo mi tesis de grado."
-
-    ],
+    "<strong>Soy</strong> recién egresado de la Licenciatura en Informática y me estoy especializando en análisis e ingeniería de datos. Me encanta todo lo relacionado con trabajar con grandes volúmenes de datos; soy un poco geek, especialmente cuando se trata de las historias de ingeniería detrás de los flujos de trabajo de datos, como las que comparten <a href=\"https://www.youtube.com/@CodingWithLewis\">Coding with Lewis</a> y <a href=\"https://www.youtube.com/@CodeSource\">CodeSource</a>.",
+    "<strong>Trabajo principalmente con</strong> Python, PostgreSQL, Excel o Google Sheets. Me interesa especialmente la intersección entre el desarrollo de software, productos y la ingeniería en la nube.",
+    "<strong>Actualmente</strong>, estoy trabajando en mi <a href=\"https://pablo-rojas-dev.github.io/\">portafolio</a> y tomando cursos sobre AWS, Java y otras herramientas; también estoy practicando mis habilidades de contenerización utilizando un servidor local (una laptop antigua con <a href=\"https://fedoraproject.org/en/server/\">Fedora Server</a>) para realizar laboratorios con <a href=\"https://podman.io/\">Podman</a>, <a href=\"https://www.docker.com/\">Docker</a> y <a href=\"https://floci.io/\">Floci</a>.",
+    "Mi principal objetivo en este momento es obtener la certificación <a href=\"https://aws.amazon.com/certification/certified-solutions-architect-associate/\">AWS Certified Solutions Architect – Associate</a>."
+  ],
   "highlight": "Los datos conectan al mundo"
 }

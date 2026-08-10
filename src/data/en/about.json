@@ -2,9 +2,10 @@
     "title": "About Me",
     "availableButton": "Available for work",
     "paragraphs": [
-      "<b>I’m a </b>Computer Science student and web developer passionate about building digital experiences that combine technology, creativity, and artificial intelligence.",
-      "<b>I mainly work with</b> React, Spring Boot, PostgreSQL, Astro, and TailwindCSS. I’m especially interested in the intersection of software development, generative AI, and creativity.",
-      "<b>Currently</b>, I’m focused on improving my skills through personal projects, research, and multidisciplinary collaboration while completing my undergraduate thesis."
+      "<strong>I’m a</strong> recent computer science graduate, and I'm specializing in data analysis and data engineering. I love everything about working with big data, I'm a bit of a geek, especially when it comes to the engineering stories behind data workflows, like the ones <a href=\"https://www.youtube.com/@CodingWithLewis\">Coding with Lewis</a> and <a href=\"https://www.youtube.com/@CodeSource\">CodeSource</a> share.",
+      "<strong>I mainly work with</strong> Python, PostgreSQL, Excel or Google Sheets. I’m especially interested in the intersection of software, product and cloud engineering.",
+      "<strong>Currently</strong>, working on my <a href=\"https://pablo-rojas-dev.github.io/\">portfolio</a> and taking courses on AWS, Java and other tools; I am also practising my containerisation skills using a local server (an old laptop running <a href=\"https://fedoraproject.org/en/server/\">Fedora Server</a>) to run labs in <a href=\"https://podman.io/\">Podman</a>, <a href=\"https://www.docker.com/\">Docker</a> and <a href=\"https://floci.io/\">Floci</a>.",
+      "My main goal at the moment is to obtain the <a href=\"https://aws.amazon.com/certification/certified-solutions-architect-associate/\">AWS Certified Solutions Architect – Associate certification</a>."
     ],
     "highlight": "Data connects the world"
 }
