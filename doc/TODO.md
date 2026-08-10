@@ -13,3 +13,5 @@
     - AWS
     - SQL Server
     - 
+- Asignar un estilo a los links en el about
+- Arreglar bug de puntos en el carrousel de Proyectos
