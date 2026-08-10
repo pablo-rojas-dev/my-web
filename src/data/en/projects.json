@@ -21,6 +21,7 @@
             "demoUrl": "https://github.com/pablo-rojas-dev/idk-fca-auditorios/tree/master",
             "githubUrl": "https://github.com/pablo-rojas-dev/idk-fca-auditorios"
         },
+
         {
             "title": "Aquasense",
             "description": "Web dashboard for visualizing data from multiple humidity and temperature sensors deployed in the field.",
@@ -40,21 +41,7 @@
             "demoUrl": "https://github.com/pablo-rojas-dev/aquasense",
             "githubUrl": "https://github.com/pablo-rojas-dev/aquasense"
         },
-        {
-            "title": "CV Translator",
-            "description": " Script to automatically translate your resume from Spanish ⇄ English.",
-            "images": [
-                "/projects/cv-translator/img-1.png",
-                "/projects/cv-translator/img-2.png"
-            ],
-            "tags": [
-                "JS", 
-                "Typst",
-                "Huggin Face - NLB200"
-            ],
-            "demoUrl": "https://github.com/pablo-rojas-dev/cv-translator",
-            "githubUrl": "https://github.com/pablo-rojas-dev/cv-translator"
-        },
+
         {
             "title": "Inventario Mix-up",
             "description": "Documentation and database design for tracking products of a music retail company. Includes problem definition, requirements analysis, conceptual model, logical model, normalization, and data dictionary.",
@@ -70,6 +57,41 @@
             ],
             "demoUrl": "https://github.com/pablo-rojas-dev/inventario-mix-up",
             "githubUrl": "https://github.com/pablo-rojas-dev/inventario-mix-up"
+        },
+
+        {
+            "title": "CV Translator",
+            "description": " Script to automatically translate your resume from Spanish ⇄ English.",
+            "images": [
+                "/projects/cv-translator/img-1.png",
+                "/projects/cv-translator/img-2.png"
+            ],
+            "tags": [
+                "JS", 
+                "Typst",
+                "Huggin Face - NLB200"
+            ],
+            "demoUrl": "https://github.com/pablo-rojas-dev/cv-translator",
+            "githubUrl": "https://github.com/pablo-rojas-dev/cv-translator"
+        },
+
+        {
+            "title": "Accounting Project",
+            "description": "Dashboard developed in Excel for general accounting management.",
+            "images": [
+                "/projects/contabilidad-proyecto/img-1.png",
+                "/projects/contabilidad-proyecto/img-2.png",
+                "/projects/contabilidad-proyecto/img-3.png",
+                "/projects/contabilidad-proyecto/img-4.png",
+                "/projects/contabilidad-proyecto/img-5.png"
+            ],
+            "tags": [
+                "Excel",
+                "Filters",
+                "Macros"
+            ],
+            "demoUrl": "https://1drv.ms/x/c/5f3910d71abc6e90/IQDgBgI46zSTTZyE5qb5YNT_AYXCa1t0ShjcfpQoexLTAfA?e=Mwzpb3",
+            "githubUrl": "https://github.com/pablo-rojas-dev/contabilidad-proyecto"
         }
     ]
 }
