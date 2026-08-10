@@ -13,8 +13,12 @@ const { data } = Astro.props as {
 };
 ---
 
-<section class="mx-auto w-full py-8">
+<section id="projects" class="mx-auto w-full py-8">
   <!-- Projects -->
+   <h2 class="mt-12 mb-10 text-center text-5xl font-bold md:text-6xl">
+    {data.title}
+  </h2>
+  
   <div
     class="flex flex-col gap-10"
     data-show-more
