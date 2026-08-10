@@ -88,7 +88,7 @@ export type ContactData = {
 export type LinkTreeItem = {
   label: string;
   href: string;
-  icon: "globe" | "github" | "linkedin" | "email" | "cv";
+  icon: "globe" | "github" | "linkedin" | "whatsapp" |"email" | "cv";
   external?: boolean;
 };
 

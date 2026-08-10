@@ -1,9 +1,9 @@
 {
   "title": "Pablo Rojas",
-  "subtitle": "Web Developer",
+  "subtitle": "Data Scientist",
   "items": [
     {
-      "label": "My Web",
+      "label": "Portfolio",
       "href": "/",
       "icon": "globe"
     },
@@ -11,6 +11,12 @@
       "label": "GitHub",
       "href": "https://github.com/pablo-rojas-dev",
       "icon": "github",
+      "external": true
+    },
+    {
+      "label": "WhatsApp",
+      "href": "https://wa.me/525544520410",
+      "icon": "whatsapp",
       "external": true
     },
     {

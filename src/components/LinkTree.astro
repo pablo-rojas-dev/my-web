@@ -10,6 +10,7 @@ const BASE_URL = import.meta.env.BASE_URL;
 
 const githubIcon = `${BASE_URL}icons/github.svg`;
 const linkedinIcon = `${BASE_URL}icons/linkedin.svg`;
+const whatsappIcon = `${BASE_URL}icons/whatsapp.svg`;
 ---
 
 <section class="relative min-h-dvh overflow-hidden bg-white text-black font-sans">
@@ -48,6 +49,14 @@ const linkedinIcon = `${BASE_URL}icons/linkedin.svg`;
                 <img
                   src={githubIcon}
                   alt="GitHub"
+                  class="h-6 w-6 sm:h-7 sm:w-7"
+                />
+              )}
+
+              {item.icon === "whatsapp" && (
+                <img
+                  src={whatsappIcon}
+                  alt="WhatsApp"
                   class="h-6 w-6 sm:h-7 sm:w-7"
                 />
               )}
