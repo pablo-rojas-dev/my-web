@@ -2,18 +2,18 @@
     "title": "Experiencia",
     "items": [
         {
-            "dateRange": "Enero 2025 — Enero 2026",
+            "dateRange": "Enero 2025 — Junio 2026",
             "title": "Becario de investigación — DGAPA UNAM",
             "jobUrl": "https://dgapa.unam.mx",
-            "description": "Curaduría de documentos para su integración en GPTs personalizados y Gemas de Gemini. Mediante Marker y PDF Sandwich, aplique OCR para convertir libros y artículos a formato Markdown, además generé transcripciones automáticas de videos de Youtube con yt-dlp y whisper.",
-            "tags": ["Python", "Whisper", "Yt-dlp", "Marker"]
+            "description": "Curaduría de documentos para su integración en chatbots GPTs de OpenAI y Gemas de Gemini. Mediante Python (Marker) y Bash (PDF Sandwich), apliqué OCR para convertir libros y artículos a formato de texto Markdown, generé transcripciones automáticas de videos de YT con Python (yt-dlp y whisper) y realicé reportes en GoogleSheets.",
+            "tags": ["Python", "Bash", "Chatbots", "OCR"]
         },
         {
             "dateRange": "Septiembre 2023 — Julio 2025",
             "title": "Líder de marketing — SIAFI-UNAM",
             "jobUrl": "https://siafi-unam.org",
-            "description": "Coordinación del equipo de marketing para la producción y publicación de contenido en redes sociales. Implementación de procesos colaborativos, estandarización de assets y sistema de tickets con Canva, Notion y Google Workspace.",
-            "tags": ["Notion", "Gimp", "Google AI Studio", "Python"]
+            "description": "Coordinación del equipo de marketing para la producción y publicación de contenido en redes sociales. Implementé procesos colaborativos, estandarización de assets y sistema de tickets con Notion y Google Workspace.",
+            "tags": ["Notion", "Google Workspace", "Python"]
         }
     ]
 }

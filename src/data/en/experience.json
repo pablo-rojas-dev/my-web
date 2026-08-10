@@ -2,18 +2,19 @@
     "title": "Experience",
     "items": [
         {
-            "dateRange": "January 2025 — January 2026",
+            "dateRange": "January 2025 — June 2026",
             "title": "Research Intern — DGPA UNAM",
             "jobUrl": "https://dgapa.unam.mx",
-            "description": "Curated documents for integration into custom GPTs and Gemini Gems. Using Marker and PDF Sandwich, I applied OCR to convert books and articles into Markdown format, and also generated automatic YouTube video transcriptions with yt-dlp and Whisper.",
-            "tags": ["Python", "Whisper", "Yt-dlp", "Marker"]
+            "description": 
+                "Curated documents for integration into OpenAI GPT chatbots and Gemini Gems. Using Python (Marker) and Bash (PDF Sandwich), I applied OCR to convert books and articles into Markdown text format, generated automatic transcripts of YouTube videos with Python (yt-dlp and Whisper), and created reports in Google Sheets.",
+            "tags": ["Python", "Bash", "Chatbots", "OCR"]
         },
         {
             "dateRange": "September 2023 — July 2025",
             "title": "Marketing Lead — SIAFI-UNAM",
             "jobUrl": "https://siafi-unam.org",
-            "description": "Coordinated the marketing team for the production and publication of social media content. Implemented collaborative processes, asset standardization, and a ticketing system using Canva, Notion, and Google Workspace.",
-            "tags": ["Notion", "Gimp", "Google AI Studio", "Python"]
+            "description": "Coordinated the marketing team in the production and publication of social media content. I implemented collaborative workflows, asset standardization, and a ticketing system using Notion and Google Workspace.",
+            "tags": ["Notion", "Google Workspace", "Python"]
         }
     ]
 }
