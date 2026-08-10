@@ -20,6 +20,12 @@
             "date" : "Agosto 2026"
         },
         {
+            "image" : "/certificates/efset-english-certificate-b2.png",
+            "certificateUrl" : "https://cert.efset.org/fvESnL",
+            "title": "EF SET English Certificate (B2)",
+            "date": "Junio 2026"
+        },
+        {
             "image" : "/certificates/associte-data-scientist-in-python.png",
             "certificateUrl" : "https://www.datacamp.com/completed/statement-of-accomplishment/track/e144b8f7c9e00ded5760533f78efcac146f2ccc0",
             "title" : "Associate Data Scientist in Python",
