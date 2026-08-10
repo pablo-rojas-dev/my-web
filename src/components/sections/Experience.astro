@@ -8,18 +8,35 @@ const { data } = Astro.props as {
 };
 ---
 
-<section id="experience" class="w-full py-16">
+<section id="experience" class="w-full py-8">
   <h2 class="mt-12 mb-12 text-center text-5xl font-bold md:text-6xl">
     {data.title}
   </h2>
 
-  <div class="show-more-container mx-auto flex max-w-4xl flex-col gap-8 px-4"
+  <div class="show-more-container mx-auto flex max-w-4xl flex-col gap-10 px-4"
     data-show-more
     data-visible="2">
     {
       data.items.map((experience) => (
         <article
-          class="show-more-card experience-card group mx-auto grid w-full sm:w-[75%] md:w-full max-w-4xl cursor-pointer gap-4 rounded-2xl p-6 text-center transition-all duration-300 md:grid-cols-[220px_1fr] md:text-left"
+          class="
+            show-more-card 
+            group 
+            mx-auto 
+            experience-card
+            grid
+            w-[92%] 
+            md:w-full 
+            max-w-5xl 
+            gap-4 
+            cursor-pointer 
+            rounded-2xl 
+            p-5
+            text-center 
+            transition-all 
+            duration-300 
+            md:grid-cols-[220px_1fr] 
+            md:text-left"
           data-url={experience.jobUrl}
         >
           <p class="text-sm font-semibold text-black">
