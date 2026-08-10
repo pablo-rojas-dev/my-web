@@ -13,117 +13,316 @@ const { data } = Astro.props as {
 };
 ---
 
-<section class="mx-auto w-full">
-  {
-    data.items.map((project) => (
-      <article class="mb-16 grid gap-8 md:grid-cols-2">
-        <!-- Carousel -->
-        <div
-          class="relative overflow-hidden rounded-xl"
-          data-carousel
+<section class="mx-auto w-full py-8">
+  <div class="flex flex-col gap-10">
+    {
+      data.items.map((project) => (
+        <article
+          class="
+            group
+            mx-auto
+            grid
+            w-[92%]
+            max-w-5xl
+            gap-8
+            rounded-3xl
+            border
+            border-neutral-200
+            bg-white
+            p-5
+            shadow-sm
+            transition-all
+            duration-300
+            ease-out
+            hover:-translate-y-1
+            hover:shadow-xl
+            md:grid-cols-2
+            md:p-7
+          "
         >
-          <!-- Images -->
+          <!-- Carousel -->
           <div
-            class="carousel-track flex snap-x snap-mandatory overflow-x-auto scroll-smooth"
+            class="
+              relative
+              overflow-hidden
+              rounded-2xl
+              bg-neutral-100
+            "
+            data-carousel
           >
-            {project.images.map((image, index) => (
-              <div
-                class="carousel-slide w-full shrink-0 snap-start"
-                data-index={index}
-              >
-                <img
-                  src={image}
-                  alt={`${project.title} - Image ${index + 1}`}
-                  class="h-full w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-
-          <!-- Previous button -->
-          <button
-            type="button"
-            class="carousel-prev absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/80 px-3 py-2 text-2xl font-bold shadow transition hover:bg-lime-400"
-            aria-label="Previous image"
-          >
-            <ChevronLeft />
-          </button>
-
-          <!-- Next button -->
-          <button
-            type="button"
-            class="carousel-next absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/80 px-3 py-2 text-2xl font-bold shadow transition hover:bg-lime-400"
-            aria-label="Next image"
-          >
-            <ChevronRight />
-          </button>
-
-          <!-- Dots -->
-          <div class="carousel-dots absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2">
-            {project.images.map((_, index) => (
-              <button
-                type="button"
-                data-index={index}
-                class:list={[
-                  "carousel-dot h-2 w-2 rounded-full transition-all duration-300",
-                  index === 0
-                    ? "scale-125 bg-lime-400"
-                    : "bg-white/70",
-                ]}
-                aria-label={`Go to image ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-
-        <!-- Project information -->
-        <div class="flex flex-col items-center md:items-start">
-          <div class="mb-5 flex w-full flex-col items-center justify-center gap-4 md:flex-row md:justify-between">
-            <div class="inline-flex items-center gap-2 text-xl font-bold">
-              {project.title}
-
-              <ArrowUpRight class="arrow h-5 w-5 transition-transform duration-300" />
+            <!-- Images -->
+            <div
+              class="
+                carousel-track
+                flex
+                snap-x
+                snap-mandatory
+                overflow-x-auto
+                overflow-y-hidden
+                scroll-smooth
+              "
+            >
+              {project.images.map((image, index) => (
+                <div
+                  class="
+                    carousel-slide
+                    aspect-video
+                    w-full
+                    shrink-0
+                    snap-start
+                  "
+                  data-index={index}
+                >
+                  <img
+                    src={image}
+                    alt={`${project.title} - Image ${index + 1}`}
+                    class="
+                      h-full
+                      w-full
+                      object-cover
+                      transition-transform
+                      duration-500
+                      ease-out
+                      group-hover:scale-[1.02]
+                    "
+                    loading="lazy"
+                  />
+                </div>
+              ))}
             </div>
 
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="stop-click group inline-flex items-center gap-2 rounded-full border border-black px-4 py-1.5 text-sm font-semibold text-black transition hover:bg-black hover:text-white"
+            <!-- Previous button -->
+            <button
+              type="button"
+              class="
+                carousel-prev
+                absolute
+                left-3
+                top-1/2
+                z-10
+                -translate-y-1/2
+                rounded-full
+                bg-white/80
+                px-3
+                py-2
+                text-2xl
+                font-bold
+                shadow
+                backdrop-blur-sm
+                transition
+                duration-200
+                hover:scale-105
+                hover:bg-lime-400
+              "
+              aria-label="Previous image"
             >
-              <span class="icon github" />
+              <ChevronLeft />
+            </button>
 
-              GitHub
-            </a>
+            <!-- Next button -->
+            <button
+              type="button"
+              class="
+                carousel-next
+                absolute
+                right-3
+                top-1/2
+                z-10
+                -translate-y-1/2
+                rounded-full
+                bg-white/80
+                px-3
+                py-2
+                text-2xl
+                font-bold
+                shadow
+                backdrop-blur-sm
+                transition
+                duration-200
+                hover:scale-105
+                hover:bg-lime-400
+              "
+              aria-label="Next image"
+            >
+              <ChevronRight />
+            </button>
+
+            <!-- Dots -->
+            <div
+              class="
+                carousel-dots
+                absolute
+                bottom-4
+                left-1/2
+                z-10
+                flex
+                -translate-x-1/2
+                gap-2
+              "
+            >
+              {project.images.map((_, index) => (
+                <button
+                  type="button"
+                  data-index={index}
+                  class:list={[
+                    "carousel-dot h-2 w-2 rounded-full transition-all duration-300",
+                    index === 0
+                      ? "scale-125 bg-lime-400"
+                      : "bg-white/70",
+                  ]}
+                  aria-label={`Go to image ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
 
-          <p class="mb-6 max-w-xl text-base leading-relaxed text-neutral-700">
-            {project.description}
-          </p>
+          <!-- Project information -->
+          <div
+            class="
+              flex
+              flex-col
+              items-center
+              justify-center
+              md:items-start
+            "
+          >
+            <div
+              class="
+                mb-5
+                flex
+                w-full
+                flex-col
+                items-center
+                justify-center
+                gap-4
+                md:flex-row
+                md:justify-between
+              "
+            >
+              <!-- Title -->
+              <div
+                class="
+                  inline-flex
+                  items-center
+                  gap-2
+                  text-xl
+                  font-bold
+                "
+              >
+                {project.title}
 
-          <div class="flex flex-wrap justify-center gap-3 md:justify-start">
-            {project.tags.map((tag) => (
-              <span class="rounded-full border border-black px-4 py-1 text-sm font-medium">
-                {tag}
-              </span>
-            ))}
+                <ArrowUpRight
+                  class="
+                    h-5
+                    w-5
+                    transition-transform
+                    duration-300
+                    ease-out
+                    group-hover:translate-x-1
+                    group-hover:-translate-y-1
+                  "
+                />
+              </div>
+
+              <!-- GitHub -->
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="
+                  stop-click
+                  group/github
+                  inline-flex
+                  items-center
+                  gap-2
+                  rounded-full
+                  border
+                  border-black
+                  px-4
+                  py-1.5
+                  text-sm
+                  font-semibold
+                  text-black
+                  transition-all
+                  duration-200
+                  hover:-translate-y-0.5
+                  hover:bg-black
+                  hover:text-white
+                  hover:shadow-md
+                "
+              >
+                <span class="icon github" />
+
+                GitHub
+              </a>
+            </div>
+
+            <!-- Description -->
+            <p
+              class="
+                mb-6
+                max-w-xl
+                text-center
+                text-base
+                leading-relaxed
+                text-neutral-700
+                md:text-left
+              "
+            >
+              {project.description}
+            </p>
+
+            <!-- Tags -->
+            <div
+              class="
+                flex
+                flex-wrap
+                justify-center
+                gap-3
+                md:justify-start
+              "
+            >
+              {project.tags.map((tag) => (
+                <span
+                  class="
+                    rounded-full
+                    border
+                    border-black
+                    px-4
+                    py-1
+                    text-sm
+                    font-medium
+                    transition-colors
+                    duration-200
+                    group-hover:border-neutral-700
+                  "
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      </article>
-    ))
-  }
+        </article>
+      ))
+    }
+  </div>
 
-  <ShowMoreButton />
+  <div class="mt-10 flex justify-center">
+    <ShowMoreButton />
+  </div>
 </section>
 
 <script>
   function initializeCarousels() {
     const carousels =
-      document.querySelectorAll<HTMLElement>("[data-carousel]");
+      document.querySelectorAll<HTMLElement>(
+        "[data-carousel]",
+      );
 
     carousels.forEach((carousel) => {
-      // Avoid registering the listeners more than once.
+      /*
+       * Prevent duplicate event listeners.
+       */
       if (carousel.dataset.initialized === "true") {
         return;
       }
@@ -131,10 +330,14 @@ const { data } = Astro.props as {
       carousel.dataset.initialized = "true";
 
       const track =
-        carousel.querySelector<HTMLElement>(".carousel-track");
+        carousel.querySelector<HTMLElement>(
+          ".carousel-track",
+        );
 
       const slides = Array.from(
-        carousel.querySelectorAll<HTMLElement>(".carousel-slide"),
+        carousel.querySelectorAll<HTMLElement>(
+          ".carousel-slide",
+        ),
       );
 
       const dots = Array.from(
@@ -160,7 +363,7 @@ const { data } = Astro.props as {
       let currentIndex = 0;
 
       /*
-       * Update the visual state of the navigation dots.
+       * Update navigation dots.
        */
       const updateDots = (index: number) => {
         dots.forEach((dot, dotIndex) => {
@@ -184,7 +387,7 @@ const { data } = Astro.props as {
       };
 
       /*
-       * Move the carousel to a specific slide.
+       * Move to a specific slide.
        */
       const goToSlide = (index: number) => {
         if (index < 0) {
@@ -208,7 +411,7 @@ const { data } = Astro.props as {
       };
 
       /*
-       * Previous image.
+       * Previous slide.
        */
       previousButton?.addEventListener(
         "click",
@@ -221,7 +424,7 @@ const { data } = Astro.props as {
       );
 
       /*
-       * Next image.
+       * Next slide.
        */
       nextButton?.addEventListener(
         "click",
@@ -237,22 +440,20 @@ const { data } = Astro.props as {
        * Dot navigation.
        */
       dots.forEach((dot, index) => {
-        dot.addEventListener("click", (event) => {
-          event.preventDefault();
-          event.stopPropagation();
+        dot.addEventListener(
+          "click",
+          (event) => {
+            event.preventDefault();
+            event.stopPropagation();
 
-          goToSlide(index);
-        });
+            goToSlide(index);
+          },
+        );
       });
 
       /*
-       * Synchronize dots when the user manually scrolls
-       * using:
-       *
-       * - Mouse
-       * - Trackpad
-       * - Touch
-       * - Mobile swipe
+       * Keep the active dot synchronized
+       * when scrolling/swiping manually.
        */
       let ticking = false;
 
@@ -266,10 +467,6 @@ const { data } = Astro.props as {
           ticking = true;
 
           requestAnimationFrame(() => {
-            /*
-             * Find the horizontal center of the visible
-             * carousel area.
-             */
             const viewportCenter =
               track.scrollLeft +
               track.clientWidth / 2;
@@ -277,33 +474,38 @@ const { data } = Astro.props as {
             let closestIndex = 0;
             let closestDistance = Infinity;
 
-            /*
-             * Determine which slide is closest
-             * to the center.
-             */
-            slides.forEach((slide, index) => {
-              const slideCenter =
-                slide.offsetLeft +
-                slide.offsetWidth / 2;
+            slides.forEach(
+              (slide, index) => {
+                const slideCenter =
+                  slide.offsetLeft +
+                  slide.offsetWidth / 2;
 
-              const distance = Math.abs(
-                viewportCenter - slideCenter,
+                const distance = Math.abs(
+                  viewportCenter -
+                    slideCenter,
+                );
+
+                if (
+                  distance <
+                  closestDistance
+                ) {
+                  closestDistance =
+                    distance;
+
+                  closestIndex = index;
+                }
+              },
+            );
+
+            if (
+              closestIndex !== currentIndex
+            ) {
+              currentIndex =
+                closestIndex;
+
+              updateDots(
+                currentIndex,
               );
-
-              if (distance < closestDistance) {
-                closestDistance = distance;
-                closestIndex = index;
-              }
-            });
-
-            /*
-             * Update the active dot only when the
-             * visible slide changes.
-             */
-            if (closestIndex !== currentIndex) {
-              currentIndex = closestIndex;
-
-              updateDots(currentIndex);
             }
 
             ticking = false;
@@ -321,15 +523,8 @@ const { data } = Astro.props as {
     });
   }
 
-  /*
-   * Standard Astro page load.
-   */
   initializeCarousels();
 
-  /*
-   * Also works if Astro View Transitions
-   * are enabled.
-   */
   document.addEventListener(
     "astro:page-load",
     initializeCarousels,
