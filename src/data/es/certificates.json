@@ -2,6 +2,42 @@
     "title": "Certificados",
     "items": [
         {
+            "image" : "/certificates/excel-fundamentals.png",
+            "certificateUrl" : "https://www.datacamp.com/completed/statement-of-accomplishment/track/a54d4b4e5f366ec1b683aefa99f1b788f2566e67",
+            "title" : "Excel Fundamentals",
+            "date" : "Agosto 2026"
+        },
+        {
+            "image" : "/certificates/scrum-fundamentals-certified.png",
+            "certificateUrl" : "https://www.scrumstudy.com/certification/verify?type=SFC&number=1180232",
+            "title" : "Scrum Fundamentals Certified (SFC)",
+            "date" : "Agosto 2026"
+        },
+        {
+            "image" : "/certificates/aws-cloud-practitioner.png",
+            "certificateUrl" : "https://www.datacamp.com/completed/statement-of-accomplishment/track/ccd799f4d5c2270713884d67d437169b9c4e1eab",
+            "title" : "AWS Cloud Practitioner (CLF-C02)",
+            "date" : "Agosto 2026"
+        },
+        {
+            "image" : "/certificates/associte-data-scientist-in-python.png",
+            "certificateUrl" : "https://www.datacamp.com/completed/statement-of-accomplishment/track/e144b8f7c9e00ded5760533f78efcac146f2ccc0",
+            "title" : "Associate Data Scientist in Python",
+            "date" : "Julio 2026"
+        },
+        {
+            "image" : "/certificates/snow-flake-data-warehousing-workshop.png",
+            "certificateUrl" : "https://achieve.snowflake.com/a1310522-8d61-471d-acd6-62ccdc17acf0",
+            "title" : "Snowflake: Data Warehousing Workshop",
+            "date" : "Julio 2026"
+        },
+        {
+            "image" : "/certificates/aws-cloud-practitioner.png",
+            "certificateUrl" : "https://www.datacamp.com/completed/statement-of-accomplishment/track/cc129fd8278cee6415d1dc2b0e854468a3c3944b",
+            "title" : "Associate Data Engineer in SQL",
+            "date" : "Julio 2026"
+        },
+        {
             "image": "/certificates/datacamp-github-foundations.png",
             "certificateUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/track/ecf4cd2799b1799316e409104834255b4211a649?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=soa",
             "title": "Datacamp - GitHub Foundations",
