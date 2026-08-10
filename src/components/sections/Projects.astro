@@ -1,192 +1,337 @@
 ---
-import { ArrowUpRight, ChevronLeft, ChevronRight } from "@lucide/astro";
+import {
+  ArrowUpRight,
+  ChevronLeft,
+  ChevronRight,
+} from "@lucide/astro";
+
 import ShowMoreButton from "../ui/ShowMoreButton.astro";
 import type { ProjectsData } from "../../types";
 
 const { data } = Astro.props as {
   data: ProjectsData;
 };
-
-const asset = (path: string) =>
-  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
 ---
 
-<section id="projects" class="w-full py-16">
-  <h2 class="mt-12 mb-12 text-center text-5xl font-bold">
-    {data.title}
-  </h2>
-
-  <div
-    class="show-more-container mx-auto flex max-w-6xl flex-col gap-12 px-4"
-    data-show-more
-    data-visible="2"
-  >
-    {
-      data.items.map((project) => (
-        <article
-          class="show-more-card project-card group mx-auto grid w-full max-w-5xl cursor-pointer gap-8 rounded-2xl p-6 text-center sm:w-[75%] md:w-full md:grid-cols-2 md:items-center md:text-left"
-          data-url={project.demoUrl}
+<section class="mx-auto w-full">
+  {
+    data.items.map((project) => (
+      <article class="mb-16 grid gap-8 md:grid-cols-2">
+        <!-- Carousel -->
+        <div
+          class="relative overflow-hidden rounded-xl"
+          data-carousel
         >
-          <div class="relative overflow-hidden rounded-xl">
-            <div class="carousel flex overflow-x-auto scroll-smooth snap-x snap-mandatory">
-              {project.images.map((image, index) => (
+          <!-- Images -->
+          <div
+            class="carousel-track flex snap-x snap-mandatory overflow-x-auto scroll-smooth"
+          >
+            {project.images.map((image, index) => (
+              <div
+                class="carousel-slide w-full shrink-0 snap-start"
+                data-index={index}
+              >
                 <img
-                  src={asset(image)}
-                  alt={`${project.title} imagen ${index + 1}`}
-                  class="carousel-item h-64 w-full flex-shrink-0 snap-center object-cover md:h-72"
+                  src={image}
+                  alt={`${project.title} - Image ${index + 1}`}
+                  class="h-full w-full object-cover"
                   loading="lazy"
                 />
-              ))}
-            </div>
-
-            <button
-              type="button"
-              class="carousel-prev absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/80 px-3 py-2 text-2xl font-bold shadow transition hover:bg-lime-400"
-            >
-              <ChevronLeft />
-            </button>
-
-            <button
-              type="button"
-              class="carousel-next absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/80 px-3 py-2 text-2xl font-bold shadow transition hover:bg-lime-400"
-            >
-              <ChevronRight />
-            </button>
-
-            <div class="carousel-dots absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2">
-              {project.images.map(() => (
-                <button
-                  type="button"
-                  class="carousel-dot h-2 w-2 rounded-full transition"
-                />
-              ))}
-            </div>
-          </div>
-
-          <div class="flex flex-col items-center md:items-start">
-            <div class="mb-5 flex w-full flex-col items-center justify-center gap-4 md:flex-row md:justify-between">
-              <div class="inline-flex items-center gap-2 text-xl font-bold">
-                {project.title}
-                <ArrowUpRight class="arrow h-5 w-5 transition-transform duration-300" />
               </div>
-
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="stop-click group inline-flex items-center gap-2 rounded-full border border-black px-4 py-1.5 text-sm font-semibold text-black transition hover:bg-black hover:text-white"
-              >
-                <span class="icon github"></span>
-                GitHub
-              </a>
-            </div>
-
-            <p class="mb-6 max-w-xl text-base leading-relaxed text-neutral-700">
-              {project.description}
-            </p>
-
-            <div class="flex flex-wrap justify-center gap-3 md:justify-start">
-              {project.tags.map((tag) => (
-                <span class="rounded-full border border-black px-4 py-1 text-sm font-medium">
-                  {tag}
-                </span>
-              ))}
-            </div>
+            ))}
           </div>
-        </article>
-      ))
-    }
-  </div>
+
+          <!-- Previous button -->
+          <button
+            type="button"
+            class="carousel-prev absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/80 px-3 py-2 text-2xl font-bold shadow transition hover:bg-lime-400"
+            aria-label="Previous image"
+          >
+            <ChevronLeft />
+          </button>
+
+          <!-- Next button -->
+          <button
+            type="button"
+            class="carousel-next absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/80 px-3 py-2 text-2xl font-bold shadow transition hover:bg-lime-400"
+            aria-label="Next image"
+          >
+            <ChevronRight />
+          </button>
+
+          <!-- Dots -->
+          <div class="carousel-dots absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+            {project.images.map((_, index) => (
+              <button
+                type="button"
+                data-index={index}
+                class:list={[
+                  "carousel-dot h-2 w-2 rounded-full transition-all duration-300",
+                  index === 0
+                    ? "scale-125 bg-lime-400"
+                    : "bg-white/70",
+                ]}
+                aria-label={`Go to image ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        <!-- Project information -->
+        <div class="flex flex-col items-center md:items-start">
+          <div class="mb-5 flex w-full flex-col items-center justify-center gap-4 md:flex-row md:justify-between">
+            <div class="inline-flex items-center gap-2 text-xl font-bold">
+              {project.title}
+
+              <ArrowUpRight class="arrow h-5 w-5 transition-transform duration-300" />
+            </div>
+
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="stop-click group inline-flex items-center gap-2 rounded-full border border-black px-4 py-1.5 text-sm font-semibold text-black transition hover:bg-black hover:text-white"
+            >
+              <span class="icon github" />
+
+              GitHub
+            </a>
+          </div>
+
+          <p class="mb-6 max-w-xl text-base leading-relaxed text-neutral-700">
+            {project.description}
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-3 md:justify-start">
+            {project.tags.map((tag) => (
+              <span class="rounded-full border border-black px-4 py-1 text-sm font-medium">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </article>
+    ))
+  }
 
   <ShowMoreButton />
 </section>
 
 <script>
-  /* CARD COMPLETA CLICKEABLE */
-  document.querySelectorAll<HTMLElement>(".project-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      const url = card.dataset.url;
+  function initializeCarousels() {
+    const carousels =
+      document.querySelectorAll<HTMLElement>("[data-carousel]");
 
-      if (url) {
-        window.open(url, "_blank");
+    carousels.forEach((carousel) => {
+      // Avoid registering the listeners more than once.
+      if (carousel.dataset.initialized === "true") {
+        return;
       }
-    });
-  });
 
-  /* EVITAR QUE BOTONES INTERNOS DISPARAN CARD */
-  document
-    .querySelectorAll<HTMLElement>(
-      ".stop-click, .carousel-prev, .carousel-next, .carousel-dot"
-    )
-    .forEach((element) => {
-      element.addEventListener("click", (e) => e.stopPropagation());
-    });
+      carousel.dataset.initialized = "true";
 
-  /* CAROUSEL */
-  document.querySelectorAll<HTMLElement>(".carousel").forEach((carousel) => {
-    const wrapper = carousel.parentElement;
-    const items = carousel.querySelectorAll<HTMLElement>(".carousel-item");
-    const prevBtn = wrapper?.querySelector<HTMLButtonElement>(".carousel-prev");
-    const nextBtn = wrapper?.querySelector<HTMLButtonElement>(".carousel-next");
-    const dots = wrapper?.querySelectorAll<HTMLButtonElement>(".carousel-dot");
+      const track =
+        carousel.querySelector<HTMLElement>(".carousel-track");
 
-    let currentIndex = 0;
+      const slides = Array.from(
+        carousel.querySelectorAll<HTMLElement>(".carousel-slide"),
+      );
 
-    function updateCarousel() {
-      carousel.scrollTo({
-        left: carousel.clientWidth * currentIndex,
-        behavior: "smooth",
-      });
+      const dots = Array.from(
+        carousel.querySelectorAll<HTMLButtonElement>(
+          ".carousel-dot",
+        ),
+      );
 
-      dots?.forEach((dot, index) => {
-        dot.classList.toggle("bg-lime-400", index === currentIndex);
-        dot.classList.toggle("bg-gray-500", index !== currentIndex);
-      });
-    }
+      const previousButton =
+        carousel.querySelector<HTMLButtonElement>(
+          ".carousel-prev",
+        );
 
-    nextBtn?.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % items.length;
-      updateCarousel();
-    });
+      const nextButton =
+        carousel.querySelector<HTMLButtonElement>(
+          ".carousel-next",
+        );
 
-    prevBtn?.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + items.length) % items.length;
-      updateCarousel();
-    });
+      if (!track || slides.length === 0) {
+        return;
+      }
 
-    dots?.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
+      let currentIndex = 0;
+
+      /*
+       * Update the visual state of the navigation dots.
+       */
+      const updateDots = (index: number) => {
+        dots.forEach((dot, dotIndex) => {
+          const isActive = dotIndex === index;
+
+          dot.classList.toggle(
+            "bg-lime-400",
+            isActive,
+          );
+
+          dot.classList.toggle(
+            "scale-125",
+            isActive,
+          );
+
+          dot.classList.toggle(
+            "bg-white/70",
+            !isActive,
+          );
+        });
+      };
+
+      /*
+       * Move the carousel to a specific slide.
+       */
+      const goToSlide = (index: number) => {
+        if (index < 0) {
+          index = slides.length - 1;
+        }
+
+        if (index >= slides.length) {
+          index = 0;
+        }
+
         currentIndex = index;
-        updateCarousel();
+
+        const slide = slides[currentIndex];
+
+        track.scrollTo({
+          left: slide.offsetLeft,
+          behavior: "smooth",
+        });
+
+        updateDots(currentIndex);
+      };
+
+      /*
+       * Previous image.
+       */
+      previousButton?.addEventListener(
+        "click",
+        (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          goToSlide(currentIndex - 1);
+        },
+      );
+
+      /*
+       * Next image.
+       */
+      nextButton?.addEventListener(
+        "click",
+        (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          goToSlide(currentIndex + 1);
+        },
+      );
+
+      /*
+       * Dot navigation.
+       */
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          goToSlide(index);
+        });
       });
+
+      /*
+       * Synchronize dots when the user manually scrolls
+       * using:
+       *
+       * - Mouse
+       * - Trackpad
+       * - Touch
+       * - Mobile swipe
+       */
+      let ticking = false;
+
+      track.addEventListener(
+        "scroll",
+        () => {
+          if (ticking) {
+            return;
+          }
+
+          ticking = true;
+
+          requestAnimationFrame(() => {
+            /*
+             * Find the horizontal center of the visible
+             * carousel area.
+             */
+            const viewportCenter =
+              track.scrollLeft +
+              track.clientWidth / 2;
+
+            let closestIndex = 0;
+            let closestDistance = Infinity;
+
+            /*
+             * Determine which slide is closest
+             * to the center.
+             */
+            slides.forEach((slide, index) => {
+              const slideCenter =
+                slide.offsetLeft +
+                slide.offsetWidth / 2;
+
+              const distance = Math.abs(
+                viewportCenter - slideCenter,
+              );
+
+              if (distance < closestDistance) {
+                closestDistance = distance;
+                closestIndex = index;
+              }
+            });
+
+            /*
+             * Update the active dot only when the
+             * visible slide changes.
+             */
+            if (closestIndex !== currentIndex) {
+              currentIndex = closestIndex;
+
+              updateDots(currentIndex);
+            }
+
+            ticking = false;
+          });
+        },
+        {
+          passive: true,
+        },
+      );
+
+      /*
+       * Initial state.
+       */
+      updateDots(currentIndex);
     });
+  }
 
-    updateCarousel();
-  });
+  /*
+   * Standard Astro page load.
+   */
+  initializeCarousels();
+
+  /*
+   * Also works if Astro View Transitions
+   * are enabled.
+   */
+  document.addEventListener(
+    "astro:page-load",
+    initializeCarousels,
+  );
 </script>
-
-<style>
-  .project-card {
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-
-  .project-card:hover {
-    transform: scale(1.04);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
-  }
-
-  .project-card:hover .arrow {
-    transform: translateY(-4px) translateX(4px);
-  }
-
-  .carousel {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .carousel::-webkit-scrollbar {
-    display: none;
-  }
-</style>
