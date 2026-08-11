@@ -29,8 +29,10 @@ const { data } = Astro.props as {
         <article
           data-project
           data-project-index={index}
+          data-url={project.demoUrl}
           class="
             show-more-card
+            project-card
             group
             mx-auto
             grid
@@ -326,6 +328,16 @@ const { data } = Astro.props as {
 </section>
 
 <script>
+  document.querySelectorAll<HTMLElement>(".project-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const url = card.dataset.url;
+
+      if (url) {
+        window.open(url, "_blank");
+      }
+    });
+  });
+
   function initializeCarousels() {
     const carousels =
       document.querySelectorAll<HTMLElement>(
